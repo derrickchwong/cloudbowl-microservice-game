@@ -463,16 +463,16 @@ object Player {
               (validateService: URL => Future[Option[String]])
               (implicit executionContext: ExecutionContext): Future[Either[(NameInvalid, ServiceInvalid, GithubUserInvalid), Player]] = {
 
-    val nameOrError = maybeName.fold[Either[String, String]](Left("Name must not be empty")) { name =>
+    val nameOrError = maybeName.fold[Either[String, String]](Left("Email must not be empty")) { name =>
       if (name.length > 64) {
-        Left("Name must be less than 65 characters")
+        Left("Email must be less than 65 characters")
       }
-      else if ("[^\\p{L}0-9\\s]".r.findFirstIn(name).isDefined) {
-        Left("Name must only contain letters, numbers, and spaces")
-      }
-      else if (profanity.matches(name)) {
-        Left("Name contains invalid words")
-      }
+//      else if ("[^\\p{L}0-9\\s]".r.findFirstIn(name).isDefined) {
+//        Left("Name must only contain letters, numbers, and spaces")
+//      }
+//      else if (profanity.matches(name)) {
+//        Left("Name contains invalid words")
+//      }
       else {
         Right(name)
       }

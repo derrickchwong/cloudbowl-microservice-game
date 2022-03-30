@@ -46,7 +46,7 @@
                         @form(controllers.routes.Main.joinValidate(arena)) {
                             @CSRF.formField
                             <div class="form-group">
-                                <label for="name">Your Name</label>
+                                <label for="name">Your Email</label>
                                 @name.fold {
                                     <input class="form-control" id="name" name="name" required>
                                 } { sName =>
