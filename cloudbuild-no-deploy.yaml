@@ -11,9 +11,9 @@ steps:
       git submodule init
       git submodule update
 
-- name: 'adoptopenjdk/openjdk8'
-  entrypoint: './sbt'
-  args: ['test']
+#- name: 'adoptopenjdk/openjdk8'
+#  entrypoint: './sbt'
+#  args: ['test']
 
 - name: 'gcr.io/k8s-skaffold/pack'
   entrypoint: 'pack'
