@@ -16,6 +16,14 @@
 
 const println = console.log;
 
+function pauseResume() {
+  if(document.body.dataset.paused === true) {
+    document.body.dataset.paused = false;
+  } else {
+    document.body.dataset.paused = true;
+  }
+}
+
 function clear(parent, maybeChildClassName, removeChild) {
   if (maybeChildClassName === undefined) {
     while (parent.firstChild) {
